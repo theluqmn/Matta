@@ -6,6 +6,7 @@ from discord.ext.commands import Cog
 #   Getting the saved autoresponses
 with open("data/responses.json", "r") as file:
     autoresponses = json.load(file)
+    print(autoresponses)
 
 #   Main class
 class AutoReponder(Cog):
