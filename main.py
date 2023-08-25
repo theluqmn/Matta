@@ -1,48 +1,59 @@
-import discord, os, time
-from dotenv import load_dotenv
+import discord, os, time, json
+from dotenv import load_dotenv, set_key
 from discord.ext import commands
+from pathlib import Path
+from config import setup
 
-if not os.path.exists(".env"):
-    print("Missing required .env token file.")
+print("""
+Måtta Discord Bot
 
-else:
+GitHub repo: 
+- https://github.com/luqmanity/matta
 
-    load_dotenv() # Loading the .env
+Nytra Discord server:
+- https://discord.gg/7w8b6MMXBy\n""")
 
-    if __name__ == "__main__":
-        TOKEN = str(os.getenv("token"))
+load_dotenv("data/.env") # Loading the .env
 
-        bot = discord.Bot(
-            intents= discord.Intents.all()
+#   Required files exists
+print("Required files exists. Deploying bot...")
+TOKEN = str(os.getenv("token"))
+
+if __name__ == "__main__":
+    bot = discord.Bot(
+        intents=discord.Intents.all()
+    )
+
+    # Startup configs
+    startup_time = time.time()
+
+    @bot.event
+    async def on_ready():
+
+        #   Setting the bot RPC
+        await bot.change_presence(
+            status=discord.Status.do_not_disturb,
+            activity=discord.Activity(
+                type=discord.ActivityType.playing,
+                ame="Hej då! /help"
+            )
         )
 
-        #   Startup configs 
-        startup_time = time.time()
+        #   Checking how long to run
+        startup_duration = round(time.time() - startup_time, 4)
+        print(f"{bot.user} is online, took {startup_duration}s")
 
-        @bot.event
-        async def on_ready():
-            await bot.change_presence(
-                status= discord.Status.do_not_disturb,
-                activity= discord.Activity(
-                    type= discord.ActivityType.playing,
-                    name= "Hej då! /help"
-                )
-            )
+    # Cogs
+    bot.load_extension("src.modules.autoresponses")
+    bot.load_extension("src.modules.tools")
+    bot.load_extension("src.modules.moderation")
 
-            startup_duration = round(time.time() - startup_time, 4)
-            print(f"{bot.user} is online, took {startup_duration}s")
-        
-        #   Cogs
-        bot.load_extension("src.modules.autoresponses")
-        bot.load_extension("src.modules.tools")
-        bot.load_extension("src.modules.moderation")
+    # Cooldown Management
+    @bot.event
+    async def on_application_command_error(ctx, error):
+        if isinstance(error, commands.CommandOnCooldown):
+            await ctx.send(error)
+        else:
+            raise error
 
-        #   Cooldown Management
-        @bot.event
-        async def on_application_command_error(ctx, error):
-            if isinstance(error, commands.CommandOnCooldown):
-                await ctx.send(error)
-            else:
-                raise error
-
-        bot.run(TOKEN)
+    bot.run(TOKEN)
