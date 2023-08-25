@@ -30,6 +30,9 @@ proceed by inputting **y**.  It should output a panel on the console, that shows
 it's description. Simply input "setup", and once "setup complete" is outputted, all required folders
 and files should be created in the project folder.
 
+**The folders and files created are required for the bot to function, but is excluded from 
+this repo so that anyone can just keep their old data even when running off a newer version.**
+
 **Alternatively**, you can run the `config.py` script located in the project.
 
 Please note that if you ran `main.py` to open the Config Panel, the bot will run after
