@@ -8,8 +8,9 @@ https://discord.gg/7w8b6MMXBy
 This is a general-purpose, all-in-one Discord bot designed to be helpful and customisable according to the exact
 needs and wants, requirements and situations of servers and communities.
 
-Made using Python, pycord fork of the discord library. Some JSON is used for data saving.
-Ping me on Discord via the server if you would like to be a contributor.
+Made using Python, Pycord fork of the discord library. Some JSON is used for data saving.
+Ping me on Discord via the server if you would like to be a contributor. Commands anf different
+scripts are separated using cogs extensions with Pycord.
 
 This repo includes an overview of how to run the bot, and the default commands.
 
