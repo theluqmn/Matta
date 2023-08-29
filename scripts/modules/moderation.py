@@ -318,6 +318,6 @@ class Moderation(Cog):
             )
 
 
-
+#   Cog setup
 def setup(bot):
     bot.add_cog(Moderation(bot))

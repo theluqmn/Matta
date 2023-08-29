@@ -18,6 +18,7 @@ class AutoReponder(Cog):
             "View and manage autoresponders in this server."
         )
 
+
         #   Add new autoresponder
         @autoresponder.command(description= "Add a new autoresponder")
         async def add(
@@ -32,7 +33,8 @@ class AutoReponder(Cog):
             responseList = responses.split(",")
             triggersList = [word.strip() for word in triggersList]
             responseList = [word.strip() for word in responseList]
-            autoresponses[ctx.guild.id] = {responder_name: {"enabled": True, "triggers": triggersList, "responses": responseList}}
+            autoresponses[str(ctx.guild.id)] = {responder_name: {"enabled": True, "triggers": triggersList, "responses": responseList}}
+
 
             #   Saving the dictionary to JSON
             with open("data/responses.json", "w") as file:
@@ -62,12 +64,11 @@ class AutoReponder(Cog):
             ctx,
             responder_name: Option(str, "The name of autoresponder", required=True)
         ):
-            
             #   Check if enable
-            if autoresponses[ctx.guild.id][responder_name]["enabled"] == False:
-                autoresponses[ctx.guild.id][responder_name]["enabled"] = True
+            if autoresponses[str(ctx.guild.id)][responder_name]["enabled"] == False:
+                autoresponses[str(ctx.guild.id)][responder_name]["enabled"] = True
             else:
-                autoresponses[ctx.guild.id][responder_name]["enabled"] = False
+                autoresponses[str(ctx.guild.id)][responder_name]["enabled"] = False
             
             #   Respond
             await ctx.respond(
@@ -77,7 +78,7 @@ class AutoReponder(Cog):
                         {responder_name}
 
                         **State:**
-                        {autoresponses[ctx.guild.id][responder_name]["enabled"]}
+                        {autoresponses[str(ctx.guild.id)][responder_name]["enabled"]}
                         """)
                     .set_author(name= "Successfully toggled autoresponder")
                 )
@@ -125,7 +126,7 @@ class AutoReponder(Cog):
             responder_name: Option(str, "Autoresponder name", required= True)
         ):
             
-            del autoresponses[ctx.guild.id][responder_name]
+            del autoresponses[str(ctx.guild.id)][responder_name]
 
             await ctx.respond(
                 embed = Embed(
@@ -136,7 +137,6 @@ class AutoReponder(Cog):
                 .set_author(name= "Successfully deleted autoresponder")
                 .set_footer(text= "Måtta Discord Bot - https://github.com/luqmanity/matta")
                 )
-
 
     #   Message responder
     @discord.Cog.listener()
@@ -163,6 +163,7 @@ class AutoReponder(Cog):
                             else:
                                 #   If only single response item
                                 await message.channel.send(autoresponses[guild][responder]["responses"][0])
-    
+
+#   Cog setup
 def setup(bot):
     bot.add_cog(AutoReponder(bot))

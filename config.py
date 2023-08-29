@@ -1,6 +1,5 @@
 import os, time, json
-from dotenv import load_dotenv, set_key
-from pathlib import Path
+from dotenv import load_dotenv
 
 print("""
 Måtta Discord Bot - CONFIG
@@ -12,7 +11,7 @@ Nytra Discord server:
 - https://discord.gg/7w8b6MMXBy\n""")
 time.sleep(3)
 
-load_dotenv() # Loading the .env
+load_dotenv("data/.env") # Loading the .env
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -21,7 +20,7 @@ def clear_console():
 def setup():
     run = True
 
-    if not os.path.exists("data/"):
+    if not os.path.exists("data"):
         print("Missing data folder.")
         os.mkdir("data")
         run = False
@@ -32,8 +31,8 @@ def setup():
         print("Missing .env file. Please open and include the bot token later")
 
         with open("data/.env", "w") as file:
-                file.write("")
-        run = False
+            file.write("")
+            run = False
     else:
         print("data/.env exists.")
 

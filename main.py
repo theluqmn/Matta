@@ -3,6 +3,7 @@ from dotenv import load_dotenv, set_key
 from discord.ext import commands
 from pathlib import Path
 from config import setup
+os.system("cls")
 
 print("""
 Måtta Discord Bot
@@ -44,9 +45,10 @@ if __name__ == "__main__":
         print(f"{bot.user} is online, took {startup_duration}s")
 
     # Cogs
-    bot.load_extension("src.modules.autoresponses")
-    bot.load_extension("src.modules.tools")
-    bot.load_extension("src.modules.moderation")
+    bot.load_extension("scripts.modules.autoresponses")
+    bot.load_extension("scripts.modules.tools")
+    bot.load_extension("scripts.modules.moderation")
+    bot.load_extension("scripts.modules.help")
 
     # Cooldown Management
     @bot.event
