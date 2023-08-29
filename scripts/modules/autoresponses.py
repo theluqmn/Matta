@@ -9,7 +9,7 @@ with open("data/responses.json", "r") as file:
     print(autoresponses)
 
 #   Main class
-class AutoReponder(Cog):
+class AutoResponder(Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -166,4 +166,4 @@ class AutoReponder(Cog):
 
 #   Cog setup
 def setup(bot):
-    bot.add_cog(AutoReponder(bot))
+    bot.add_cog(AutoResponder(bot))
