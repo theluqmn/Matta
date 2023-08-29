@@ -8,6 +8,10 @@ os.system("cls")
 print("""
 Måtta Discord Bot
 
+If you're facing any problems, please post an issue
+on the GitHub repo, and/or alert us in the
+Discord server.
+
 GitHub repo: 
 - https://github.com/luqmanity/matta
 
@@ -17,7 +21,7 @@ Nytra Discord server:
 load_dotenv("data/.env") # Loading the .env
 
 #   Required files exists
-print("Required files exists. Deploying bot...")
+print("Required files exists. Deploying bot...\n")
 TOKEN = str(os.getenv("token"))
 
 if __name__ == "__main__":
@@ -42,7 +46,7 @@ if __name__ == "__main__":
 
         #   Checking how long to run
         startup_duration = round(time.time() - startup_time, 4)
-        print(f"{bot.user} is online, took {startup_duration}s")
+        print(f"{bot.user} is online, took {startup_duration}s\n")
 
     # Cogs
     bot.load_extension("scripts.modules.autoresponses")

@@ -64,7 +64,7 @@ def setup():
     else:
         print("data/settings.json exists.")
     
-    print("\nSetup complete.")
+    print("\nSetup complete.\n")
     return run
 
 run = input("Open Config panel? (y/n): ")
