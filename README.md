@@ -8,8 +8,9 @@ https://discord.gg/7w8b6MMXBy
 This is a general-purpose, all-in-one Discord bot designed to be helpful and customisable according to the exact
 needs and wants, requirements and situations of servers and communities.
 
-Made using Python, pycord fork of the discord library. Some JSON is used for data saving.
-Ping me on Discord via the server if you would like to be a contributor.
+Made using Python, Pycord fork of the discord library. Some JSON is used for data saving.
+Ping me on Discord via the server if you would like to be a contributor. Commands anf different
+scripts are separated using cogs extensions with Pycord.
 
 This repo includes an overview of how to run the bot, and the default commands.
 
@@ -30,6 +31,9 @@ proceed by inputting **y**.  It should output a panel on the console, that shows
 it's description. Simply input "setup", and once "setup complete" is outputted, all required folders
 and files should be created in the project folder.
 
+**The folders and files created are required for the bot to function, but is excluded from 
+this repo so that anyone can just keep their old data even when running off a newer version.**
+
 **Alternatively**, you can run the `config.py` script located in the project.
 
 Please note that if you ran `main.py` to open the Config Panel, the bot will run after
@@ -48,6 +52,12 @@ Your Discord bot should work now! Do note that Discord will reset/disable the to
 somewhere in the internet. Discord will DM you to inform if that happens. Please do **NOT** share your
 discord bot's token anywhere unsecure, and it's best to keep it to yourself or your team. If you need
 to share the token, please encrypt it so only those with the key(s) can view the token.
+
+# Updating
+You can easily update the bot by donwloading the source code, then running `config.py`. The process
+is similar to setting up this bot when you first started earlier. The `setup` function will check
+what files, folders, etc is missing, then later creates it. *If it exists but is on an outdated format,
+it will be updated and included with new data. (Planned)*
 
 # Commands
 An overview of the currently available commands.
