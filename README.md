@@ -1,18 +1,17 @@
 # Måtta The Discord Bot
 
-This is a rewritten version. The LEGACY version can be found [here](https://github.com/luqmanity/matta-legacy).
+This is the rewritten and latest version of Måtta. The LEGACY version can be found [here](https://github.com/luqmanity/matta-legacy).
 
 ### Join the Discord Server for support, etc:
 https://discord.gg/7w8b6MMXBy
 
-This is a general-purpose, all-in-one Discord bot designed to be helpful and customisable according to the exact
-needs and wants, requirements and situations of servers and communities.
+Måtta is an open-sourced Discord bot made by luqmanity and several
+other contributors, using `pycord` (a fork of discord.py).
+This bot also uses cogs, command groups, and discord views and UI.
+It is recommended to at least have some experience working on
+Discord bots, and pycord, if you would like to contribute to the project.
 
-Made using Python, Pycord fork of the discord library. Some JSON is used for data saving.
-Ping me on Discord via the server if you would like to be a contributor. Commands anf different
-scripts are separated using cogs extensions with Pycord.
-
-This repo includes an overview of how to run the bot, and the default commands.
+This repo includes an overview of how to run the bot and other useful informations. Use `/help` after completing setup!
 
 **Usage of the source code for commercial, private, or fun uses is allowed, as long as this repo is credited. The crediting needs to be easily visible.**
 
@@ -58,33 +57,6 @@ You can easily update the bot by donwloading the source code, then running `conf
 is similar to setting up this bot when you first started earlier. The `setup` function will check
 what files, folders, etc is missing, then later creates it. *If it exists but is on an outdated format,
 it will be updated and included with new data. (Planned)*
-
-# Commands
-An overview of the currently available commands.
-
-## Moderation
-`/timeout` <br>
-Time out a user<br>
-`/unmute` <br>
-Removes timeout<br>
-`/kick` <br>
-Kicks a user<br>
-`/ban` <br>
-Bans a user<br>
-
-## Autoresponder
-Autoresponders works by having a dictionary storing all the triggers and responses for a unique autoresponder in each server.
-It can also be edited and toggled, or even deleted. It's just here for fun so you can at least do some conversations
-with bots in a lonely server lol. 
-
-`/autoresponder add` <br>
-Create a new autoresponder, include triggers and responses <br>
-`/autoresponder toggle` <br>
-Toggle an autoresponder<br>
-`/autoresponder edit` <br>
-Edit the triggers and responses of an existing autoresponder<br>
-`/autoresponder delete` <br>
-Deletes an autoresponder<br>
 
 # Config Panel
 This project includes `config.py`, which is a console-based panel created specifically help with 
