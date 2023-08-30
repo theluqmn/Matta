@@ -3,6 +3,7 @@ from discord import Option
 from discord.ext import commands
 from discord.ext.commands import Cog
 from discord.ui import Select
+from scripts.embeds import help as Embeds
 
 #   Main class
 class Help(Cog):
@@ -18,7 +19,6 @@ class Help(Cog):
         self, ctx
     ):
         #   Loading up the embeds
-        from scripts.embeds import help as Embeds
         embed = Embeds.home()
 
         #   Selection setup

@@ -53,6 +53,7 @@ if __name__ == "__main__":
     bot.load_extension("scripts.modules.tools")
     bot.load_extension("scripts.modules.moderation")
     bot.load_extension("scripts.modules.help")
+    bot.load_extension("scripts.modules.fun")
 
     # Cooldown Management
     @bot.event
