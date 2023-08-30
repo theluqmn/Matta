@@ -40,7 +40,7 @@ if __name__ == "__main__":
             status=discord.Status.do_not_disturb,
             activity=discord.Activity(
                 type=discord.ActivityType.playing,
-                ame="Hej då! /help"
+                name="Hej då! /help"
             )
         )
 
