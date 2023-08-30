@@ -93,3 +93,14 @@ def moderation():
     embed.set_footer(text= "Måtta Discord Bot - https://github.com/luqmanity/matta")
 
     return embed
+
+def fun():
+    embed = Embed(
+        description= """
+            Fun commands!
+            
+            `calculator`
+            > The basic calculator everyone has for some reason?"""
+    )
+    embed.set_author(name= "Help - Fun!")
+    embed.set_footer(text= "Måtta Discord Bot - https://github.com/luqmanity/matta")

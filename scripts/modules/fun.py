@@ -37,6 +37,7 @@ class Fun(Cog):
         else:
             #   No match
             await ctx.respond(embed= Embeds.not_found(num1, num2))
+
     
 #   Cog setup
 def setup(bot):
