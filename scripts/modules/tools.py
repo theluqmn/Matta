@@ -1,5 +1,5 @@
 import discord
-from discord import Option, Embed
+from discord import ApplicationContext, Option, Embed
 from discord.ext import commands
 from discord.ext.commands import Cog
 
