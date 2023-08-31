@@ -43,23 +43,23 @@ class Tools(Cog):
             .set_author(name= f"Membercount of {ctx.guild.name}")
         )
         
+    #   Calculator
     @discord.slash_command(
-        name= "calc",
-        description= "Do math"
+        name= "calculator",
+        description= "Does basic math"
     )
     async def calculate(
         self,
         ctx: ApplicationContext,
-        num1: Option(str),
+        num1: Option(str, description= "Number to perform operation"),
         operation: Option(str, choices=["+", "-", "*", "/"]),
-        num2: Option(str),
+        num2: Option(str, description= "Second number to perform operation on with the first number"),
     ):
         if operation not in ["+", "-", "*", "/"]:
             await ctx.respond("Please type a valid operation type.")
         else:
             var = f"{num1} {operation} {num2}"
             await ctx.respond(f"{var} = {eval(var)}")
-
 
     
 def setup(bot):
