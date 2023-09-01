@@ -35,7 +35,7 @@ if __name__ == "__main__":
     @bot.event
     async def on_ready():
 
-        #   Setting the bot RPC
+        #   Setting the bot status
         await bot.change_presence(
             status=discord.Status.do_not_disturb,
             activity=discord.Activity(
