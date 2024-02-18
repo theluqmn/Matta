@@ -107,7 +107,7 @@ if run == "y":
         if action in page_list:
             page = action
 
-            #General Actions
+        #General Actions
         elif action == "home":
             page = "home"
 
